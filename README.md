@@ -30,9 +30,11 @@ Go to `./android/local.properties` and set location of the Android SDK
 
     `yarn`
     
-    `cd ./ios`
+    `cd ios`
     
     `pod install`
+    
+    `cd ..`
 
 3. Build and run the application on the iOS or Android device.
 
