@@ -2,7 +2,7 @@
 
 
 ## Acquire VidyoClient iOS and Android SDKs
-> Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-react-native directory.
+> Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in 'vidyo.io-connector-react-native-navigation' directory.
 
 1. Download the latest Vidyo.io Android & iOS SDK packages:
 
@@ -11,10 +11,10 @@
     > https://static.vidyo.io/latest/package/VidyoClient-iOSSDK.zip
     
 2. **Unzip VidyoClient-AndroidSDK folder and move contents of `VidyoClient-AndroidSDK/lib/android` 
-   to `VidyoConnector-react-native/android/app/libs/android`**
+   to `vidyo.io-connector-react-native-navigation/android/app/libs/android`**
    
 3. **Unzip VidyoClient-iOSSDK folder and move contents of `VidyoClient-iOSSDK/lib/ios` 
-   to `VidyoConnector-react-native/ios/lib/ios`**
+   to `vidyo.io-connector-react-native-navigation/ios/lib/ios`**
 
 ## Preparing
 
