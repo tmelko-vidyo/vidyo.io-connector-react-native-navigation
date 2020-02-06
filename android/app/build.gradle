@@ -162,6 +162,11 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs/android']
+        }
+    }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -184,6 +189,8 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
+
+    implementation files('libs/android/vidyoclient.jar')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
