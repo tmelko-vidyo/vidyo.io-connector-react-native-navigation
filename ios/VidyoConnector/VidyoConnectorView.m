@@ -23,24 +23,26 @@
     _eventDispatcher = bridge.eventDispatcher;
   }
   
+  [VCConnectorPkg vcInitialize];
+  [self createVidyoConnector];
   return self;
 }
 
 - (void)didMoveToWindow
 {
-  [VCConnectorPkg vcInitialize];
-  [self createVidyoConnector];
+  [self showView];
 }
 
 - (void)createVidyoConnector
 {
+  const char * logLevels = "debug@VidyoClient debug@VidyoConnector fatal error info";
   _connector = [[VCConnector alloc] init:(void *)&self
-                               ViewStyle:_viewStyle
-                      RemoteParticipants:_remoteParticipants
-                           LogFileFilter:[_logFileFilter  UTF8String]
+                               ViewStyle:VCConnectorViewStyleDefault
+                      RemoteParticipants:8 // max participant titles (0 - only self view)
+                           LogFileFilter:logLevels
                              LogFileName:[_logFileName  UTF8String]
                                 UserData:_userData];
-  [self showView];
+  
   [_connector registerParticipantEventListener:self];
 }
 

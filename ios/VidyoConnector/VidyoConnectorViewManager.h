@@ -10,7 +10,9 @@
 #define VidyoConnectorViewManager_h
 #import <React/RCTViewManager.h>
 
-@interface VidyoConnectorViewManager : RCTViewManager
+@interface VidyoConnectorViewManager : RCTViewManager {
+  @public VidyoConnectorView *vidyoView;
+}
 
 @end
 

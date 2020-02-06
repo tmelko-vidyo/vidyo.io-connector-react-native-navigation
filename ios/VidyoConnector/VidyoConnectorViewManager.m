@@ -65,10 +65,8 @@ RCT_EXPORT_METHOD(connect:(nonnull NSNumber*)reactTag
      if (![view isKindOfClass:[VidyoConnectorView class]]) {
        RCTLogError(@"Invalid view returned from registry, expecting VidyoConnectorView, got: %@", view);
      }
-     [view connect:host
-             Token:token
-       DisplayName:displayName
-        ResourceId:resourceId];
+    
+     [view connect:host Token:token DisplayName:displayName ResourceId:resourceId];
    }];
 }
 
@@ -86,7 +84,11 @@ RCT_EXPORT_METHOD(disconnect:(nonnull NSNumber*)reactTag)
 
 - (UIView *)view
 {
-  return [[VidyoConnectorView alloc] initWithBridge:self.bridge];
+  if (vidyoView == nil) {
+    vidyoView = [[VidyoConnectorView alloc] initWithBridge:self.bridge];
+  }
+  
+  return vidyoView;
 }
 
 @end
